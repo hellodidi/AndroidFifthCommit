@@ -18,8 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         webview = (WebView) findViewById(R.id.webview);
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("url");
 
-        webview.loadUrl("http://www.bai.com");
+
+
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
         webview.setWebViewClient(new WebViewClient(){
             @Override
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        webview.loadUrl(url);
     }
 
 

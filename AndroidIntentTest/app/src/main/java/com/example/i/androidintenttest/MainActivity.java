@@ -23,7 +23,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("com.sqchen.my_view",Uri.parse(edt.getText().toString()));
+              /*  Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse(edt.getText().toString());
+                intent.setData(content_url);
+                intent.setClassName("com.example.i.androidwebviewtest","com.example.i.androidwebviewtest.MainActivity");*/
+                Intent intent = new Intent("android.intent.action.VIEW",Uri.parse(edt.getText().toString()));
                 startActivity(intent);
             }
         });
